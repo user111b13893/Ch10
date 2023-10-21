@@ -1,0 +1,30 @@
+// 定義 Caaa 類別
+class Caaa {
+    public int num1;  // 數字1
+    public int num2;  // 數字2
+}
+
+// 定義 Cbbb 類別，繼承自 Caaa 類別
+class Cbbb extends Caaa {
+    // 設定 num1 和 num2 的值
+    public void set_mum(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    // 顯示 num1 和 num2 的值
+    public void show() {
+        System.out.println("num1: " + num1);
+        System.out.println("num2: " + num2);
+    }
+}
+
+// 主程式類別 Ex01
+public class Ex01 {
+    public static void main(String args[]) {
+        Cbbb bb = new Cbbb();  // 建立 Cbbb 物件
+        bb.set_mum(5, 10);    // 設定 num1 和 num2 的值
+        bb.show();            // 顯示 num1 和 num2 的值
+    }
+}
+
