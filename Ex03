@@ -1,0 +1,60 @@
+// 定義 Caaa 類別
+class Caaa {
+    public int num1; // 數字1
+    public int num2; // 數字2
+
+    // (a) 無參數建構元，將 num1 和 num2 設定初值為 1
+    public Caaa() {
+        num1 = 1;
+        num2 = 1;
+    }
+
+    // (b) 有引數建構元，設定 num1 為 a，num2 為 b
+    public Caaa(int a, int b) {
+        num1 = a;
+        num2 = b;
+    }
+}
+
+// 定義 Cbbb 類別，繼承自 Caaa 類別
+class Cbbb extends Caaa {
+    // 建構元，呼叫父類別的建構元，設定 num1 和 num2
+    public Cbbb(int a, int b) {
+        super(a, b);
+    }
+
+    // 設定 num1 和 num2 的值
+    public void set_mum(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    // 顯示 num1 和 num2 的值
+    public void show() {
+        System.out.println("num1: " + num1);
+        System.out.println("num2: " + num2);
+    }
+}
+
+// 主程式類別 Ex03
+public class Ex03 {
+    public static void main(String args[]) {
+        // 測試 (a) 無參數建構元
+        Caaa a1 = new Caaa();
+        System.out.println("a1 (無參數建構元) 的值：");
+        System.out.println("num1: " + a1.num1);
+        System.out.println("num2: " + a1.num2);
+
+        // 測試 (b) 有引數建構元
+        Caaa a2 = new Caaa(5, 10);
+        System.out.println("\na2 (有引數建構元) 的值：");
+        System.out.println("num1: " + a2.num1);
+        System.out.println("num2: " + a2.num2);
+
+        // 測試 (c) 呼叫父類別的建構元
+        Cbbb b1 = new Cbbb(15, 20);
+        System.out.println("\nb1 (Cbbb 有引數建構元) 的值：");
+        b1.show();
+    }
+}
+
