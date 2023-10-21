@@ -1,0 +1,33 @@
+// 定義 CTriangle 類別
+class CTriangle {
+    protected int base;  // 底
+    protected int height;  // 高
+
+    protected void show() {
+        System.out.println("base=" + base + ", height=" + height);
+    }
+}
+
+// 定義 CData 類別，繼承自 CTriangle 類別
+class CData extends CTriangle {
+    // CData 類別的建構元，用來初始化 base 和 height
+    public CData(int base, int height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    // 計算並顯示三角形的面積
+    public void area() {
+        show();  // 呼叫父類別的 show() 函數顯示 base 和 height
+        double triangleArea = 0.5 * base * height;
+        System.out.println("area=" + triangleArea);
+    }
+}
+
+// 主程式類別 Ex06
+public class Ex06 {
+    public static void main(String[] args) {
+        CData obj = new CData(3, 8);  // 建立 CData 物件，設定底為 3、高為 8
+        obj.area();  // 呼叫 area() 函數計算並顯示三角形的面積
+    }
+}
