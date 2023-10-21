@@ -1,0 +1,45 @@
+// 定義 Caaa 類別
+class Caaa {
+    private int num;  // 私有整數 num
+
+    // 建構元，用來設定 num 的值
+    public Caaa(int n) {
+        num = n;
+    }
+
+    // 保護型方法，用來取得 num 的值
+    protected int get() {
+        return num;
+    }
+
+    // 顯示訊息 "printed from Caaa class"
+    public void display() {
+        System.out.println("printed from Caaa class");
+    }
+}
+
+// 定義 Cbbb 類別，繼承自 Caaa 類別
+class Cbbb extends Caaa {
+    // 顯示 num 的值
+    public void show() {
+        System.out.println("num=" + get());
+    }
+
+    // 建構元，呼叫父類別的建構元並設定 num 的值
+    public Cbbb(int n) {
+        super(n);
+    }
+
+    // 顯示訊息 "printed from Cbbb class"
+    public void display() {
+        System.out.println("printed from Cbbb class");
+    }
+}
+
+// 主程式類別 Ex09
+public class Ex09 {
+    public static void main(String[] args) {
+        Caaa bb = new Cbbb(2);  // 建立 Cbbb 物件並指派給 Caaa 參考變數
+        bb.display();  // 呼叫 display() 方法，會呼叫 Cbbb 中的版本
+    }
+}
