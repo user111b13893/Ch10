@@ -1,0 +1,43 @@
+// 定義 Car 類別
+class Car {
+    protected String owner; // 車主姓名
+    protected String id;    // 車牌號碼
+
+    // 顯示車主姓名和車牌號碼
+    void show() {
+        System.out.println("車主姓名:" + owner);
+        System.out.println("車牌號碼:" + id);
+    }
+
+    // 建構元，用來初始化車主姓名和車牌號碼
+    public Car(String own, String s) {
+        owner = own;
+        id = s;
+    }
+}
+
+// 定義 CColor 類別，繼承自 Car 類別
+class CColor extends Car {
+    private String color; // 車身顏色
+
+    // 建構元，用來初始化車主姓名、車牌號碼和車身顏色
+    public CColor(String own, String s, String c) {
+        super(own, s); // 呼叫父類別的建構元
+        color = c;
+    }
+
+    // 顯示車主姓名、車牌號碼和車身顏色
+    public void show() {
+        super.show(); // 呼叫父類別的 show() 方法
+        System.out.println("車身顏色" + color);
+    }
+}
+
+// 主程式類別 Ex17
+public class Ex17 {
+    public static void main(String[] args) {
+        // 建立 CColor 物件，設定車主姓名、車牌號碼和車身顏色
+        CColor mycar = new CColor("Riaan", "A1-235", "Black");
+        mycar.show(); // 顯示車子的資訊
+    }
+}
